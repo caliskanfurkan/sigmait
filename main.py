@@ -5,4 +5,7 @@ veri = open("data.json","r").read()
 loaded = json.loads(veri)
 
 for i in loaded["incidents"]:
-	print(str(i["source"])+"\n\n")
+	for j in i["events"]:
+		if i["source"] == "drops" or i["source"] == "process" or i["source"] == "registry":
+			print(str(i["source"]))
+			print(str(j)+"\n\n")
